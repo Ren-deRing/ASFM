@@ -1,7 +1,11 @@
 # Auto Server For Minecraft
 Powerful automatic Minecraft server generator based on Java.
-
-
+ㅤ
+ㅤ
+# ⚠ WARNING!
+ASFM is currently in beta and is not working yet.
+ㅤ
+ㅤ
 # ❓ How to Use 
 When you run the Start-ASFM.bat file,
 it automatically installs the initial components and Java.
