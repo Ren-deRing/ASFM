@@ -19,3 +19,4 @@ and the location is appdata/Roaming/ASFM/lang.json.
 To add a language, simply align the language json component exactly and
 
 put the language name you wrote down in the json file in setting.json.
+It is recommended to enter Unicode characters due to broken text.
