@@ -26,8 +26,8 @@ public class UpdateManager {
             Thread.sleep(3000);
             System.exit(1);
         }
-        String newverS = TxtReader.TxTOneLineRead(appdata + "/ASFM/newver.txt");
-        String verS = TxtReader.TxTOneLineRead(appdata + "/ASFM/ver.txt");
+        String newverS = TextManager.TxTOneLineRead(appdata + "/ASFM/newver.txt");
+        String verS = TextManager.TxTOneLineRead(appdata + "/ASFM/ver.txt");
 
         int newver = 0, ver = 0;
 
