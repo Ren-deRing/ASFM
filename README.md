@@ -1,4 +1,4 @@
-![test](https://img.shields.io/github/v/release/Ren-deRing/ASFM)
+
 
 # Auto Server For Minecraft
 Powerful automatic Minecraft server generator based on Java.
