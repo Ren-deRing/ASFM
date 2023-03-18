@@ -11,21 +11,23 @@ import static io.github.rendering.Main.appdata;
 public class TextManager {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
-    public static String TxTOneLineRead(String file) throws InterruptedException {
+    public static String TxTOneLineRead(String file) throws InterruptedException, IOException {
 
         String temp = null;
+        BufferedReader reader = null;
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(file));
             temp = reader.readLine();
         } catch (Exception e) {
             System.out.println(ANSI_RED + "[ ERROR ] An unknown error occurred while parsing text.\n" + e + ANSI_RESET + "\nExiting...");
             Thread.sleep(3000);
             System.exit(1);
         }
+        reader.close();
         return temp;
     }
-    public static void writeToJson(String file, String name, String text) throws InterruptedException {
+    public static void writeToJson(String file, String name, Object text) throws InterruptedException {
         JSONParser parser = new JSONParser();
 
         try (Reader reader = new FileReader(file)) {

@@ -28,6 +28,8 @@ public class Main {
             ver = TextManager.TxTOneLineRead(appdata + "/ASFM/ver.txt");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -73,11 +75,11 @@ public class Main {
         JSONParser parser = new JSONParser();
         String ver = TextManager.TxTOneLineRead(appdata + "/ASFM/ver.txt");
 
-        System.out.println("ASFM v" + ver);
+        System.out.println("ASFM v" + ver + "\nCopyRight (C) 2023 Render. All right reserved. ( MIT License )\n");
         System.out.println("[ OK ] Java ASFM runs successfully.");
         System.out.println("[ ING ] Load setting.json File...");
 
-        ReloadSetting();
+        ReloadSetting(); // 설정 불러오기
 
         System.out.println("[ OK ] Json was loaded successfully.");
         if (IsCheckUpdate) {
@@ -99,11 +101,11 @@ public class Main {
         if (IsUseGui) {
             System.out.println("[ ING ] Starting GUI...");
             GUI.StartGUI();
-        } else if (DebugMode) {
+        } else if (DebugMode) { // "DebugMode": true
             System.out.println("[ ! ] Starting Debug Mode!");
             System.out.println("[ OK ] Debug Mode Started");
             System.out.println("[ ING ] Start Debug: DownloadManager");
-            DownloadManager.Download();
+            DownloadManager.Download("https://download.getbukkit.org/craftbukkit/craftbukkit-1.19.3.jar", appdata + "/ASFM/Jars", "Spigot 1.19.3");
         } else {
             System.out.println("[ ING ] Starting Console Menu...");
             ConsoleMenu.MenuStart(ver, appdata);

@@ -18,7 +18,7 @@ public class LanguageManager {
 
 
 
-    public static String UpdateAvail, Welcome, Initial1, Initial2, InitialEnd, LangNotExist, LangReloading;
+    public static String UpdateAvail, Welcome, Initial1, Initial2, InitialEnd, LangNotExist, LangReloading, MakeServer, SevSetting, PlSetting, ASFMSetting, WorlSetting, Exit;
     public static Boolean IsTextReset;
 
     public static void LoadTexts(String lang) throws InterruptedException {
@@ -35,6 +35,15 @@ public class LanguageManager {
             InitialEnd = (String) uselang.get("InitialEnd");
             LangNotExist = (String) uselang.get("LangNotExist");
             LangReloading = (String) uselang.get("LangReloading");
+
+            JSONObject Menu = (JSONObject) uselang.get("Menu");
+
+            MakeServer = (String) Menu.get("MakeServer");
+            SevSetting = (String) Menu.get("PlSetting");
+            PlSetting = (String) Menu.get("ASFMSetting");
+            ASFMSetting = (String) Menu.get("ASFMSetting");
+            WorlSetting = (String) Menu.get("WorlSetting");
+            Exit = (String) Menu.get("Exit");
 
             IsTextReset = true;
 

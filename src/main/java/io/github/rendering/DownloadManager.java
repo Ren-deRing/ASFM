@@ -18,10 +18,7 @@ import org.apache.commons.io.input.CountingInputStream;
 import static io.github.rendering.Main.appdata;
 
 public class DownloadManager {
-    public static void Download() throws IOException {
-        String fileUrl = "https://github.com/xemulat/MyFilesForDDL/releases/download/youtube/youtube.apk";
-        String saveAt = appdata + "/ASFM/Jars/Youtube.apk";
-        String filePresentName = "P193";
+    public static void Download(String fileUrl, String saveAt, String filePresentName) throws IOException {
 
         URL url = new URL(fileUrl);
         HttpURLConnection httpConnection = (HttpURLConnection) (url.openConnection());
