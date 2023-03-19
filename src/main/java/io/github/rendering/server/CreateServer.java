@@ -1,5 +1,6 @@
 package io.github.rendering.server;
 
+import io.github.rendering.LanguageManager;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -18,8 +19,8 @@ public class CreateServer {
     public static String appdata = System.getenv("APPDATA");
 
     private static Integer Ver;
-    private static Boolean NotIntVer = false;
-    private static String VerCodeStr;
+    private static Boolean NotIntVer = false, NotIntMinerVer = false;
+    private static String VerCodeStr, VerStr, MinerVerStr;
     private static List<String> MinerVerList;
 
     public static void ServerCreateMenu() throws InterruptedException, IOException {
@@ -28,12 +29,12 @@ public class CreateServer {
         while (true) {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); // 콘솔 클리어
             if (NotIntVer) {
-                System.out.println("         - 올바른 버전을 입력하세요.");
+                System.out.println("         " + LanguageManager.CorrectVer);
             } else {
                 System.out.println("\n");
             }
-            System.out.println("\n서버 만들기");
-            System.out.println("버전을 선택해 주세요.\n");
+            System.out.println("\n" + LanguageManager.CreateServer);
+            System.out.println(LanguageManager.SelectVersion + "\n");
 
             System.out.println("   - 1.19   - 1.18   - 1.17   - 1.16");
             System.out.println("   - 1.15   - 1.14   - 1.13   - 1.12");
@@ -41,7 +42,7 @@ public class CreateServer {
 
             System.out.print("\nVersion > ");
             Scanner sc = new Scanner(System.in);
-            String VerStr = sc.nextLine();
+            VerStr = sc.nextLine();
 
             System.out.println(VerStr);
             if (VerStr.equals("1.19")) {
@@ -104,7 +105,34 @@ public class CreateServer {
             Thread.sleep(3000);
             System.exit(1);
         }
+        while (true) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); // 콘솔 클리어
+            System.out.println("\n" + LanguageManager.SelectMinerVer);
+            if (NotIntMinerVer) {
+                System.out.println("     " + LanguageManager.CorrectVer + "\n");
+            } else {
+                System.out.println("");
+            }
+            for (String obj: MinerVerList) {
+                System.out.print("   "+ VerStr +"." + obj + ": " + obj);
+            }
+            System.out.print("\n\nMinerVer > ");
+            Scanner sc = new Scanner(System.in);
+            MinerVerStr = sc.nextLine();
 
-        System.out.println(MinerVerList);
+            if (MinerVerList.contains(MinerVerStr)) {
+                break;
+            } else {
+                NotIntMinerVer = true;
+            }
+        }
+
+        VerCodeStr = VerCodeStr + MinerVerStr;
+        VerStr = VerStr + "." + MinerVerStr;
+
+        while (true) {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); // 콘솔 클리어
+            System.out.println("\n" + LanguageManager.InputMem + "\n" + LanguageManager.MemWarning);
+        }
     }
 }

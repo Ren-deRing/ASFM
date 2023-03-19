@@ -18,7 +18,9 @@ public class LanguageManager {
 
 
 
-    public static String UpdateAvail, Welcome, Initial1, Initial2, InitialEnd, LangNotExist, LangReloading, MakeServer, SevSetting, PlSetting, ASFMSetting, WorlSetting, Exit;
+    public static String UpdateAvail, Welcome, Initial1, Initial2, InitialEnd, LangNotExist, LangReloading,
+            MakeServer, SevSetting, PlSetting, ASFMSetting, WorlSetting, Exit, CorrectMenuInt,
+            CorrectVer, CreateServer, SelectVersion, SelectMinerVer, InputMem, MemWarning;
     public static Boolean IsTextReset;
 
     public static void LoadTexts(String lang) throws InterruptedException {
@@ -44,6 +46,16 @@ public class LanguageManager {
             ASFMSetting = (String) Menu.get("ASFMSetting");
             WorlSetting = (String) Menu.get("WorlSetting");
             Exit = (String) Menu.get("Exit");
+            CorrectMenuInt = (String) Menu.get("CorrectMenuInt");
+
+            JSONObject CreateServerObj = (JSONObject) uselang.get("CreateServer");
+
+            CorrectVer = (String) CreateServerObj.get("CorrectVer");
+            CreateServer = (String) CreateServerObj.get("CreateServer");
+            SelectVersion = (String) CreateServerObj.get("SelectVersion");
+            SelectMinerVer = (String) CreateServerObj.get("SelectMinerVer");
+            InputMem = (String) CreateServerObj.get("InputMem");
+            MemWarning = (String) CreateServerObj.get("MemWarning");
 
             IsTextReset = true;
 

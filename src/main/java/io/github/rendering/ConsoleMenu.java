@@ -99,7 +99,7 @@ public class ConsoleMenu {
             System.out.println("\n");
             if (NotIntMenu) {
                 System.out.println("\n");
-                System.out.println("         - 1~6까지의 숫자를 입력하세요.");
+                System.out.println("         " + LanguageManager.CorrectMenuInt);
             } else {
                 System.out.println("\n");
             }
@@ -124,6 +124,7 @@ public class ConsoleMenu {
                 } else if (Menu == 4) {
                     break;
                 } else if (Menu == 5) {
+                    System.exit(0);
                     break;
                 } else if (Menu == 6) {
                     break;

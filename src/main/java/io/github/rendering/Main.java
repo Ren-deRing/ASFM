@@ -10,13 +10,10 @@ import org.json.simple.parser.ParseException;
 
 
 public class Main {
-
-    public static Boolean IsAutoFIleUpdate = null;
-    public static Boolean IsInitial = null;
-    public static Boolean IsAvailUpdate = null;
-    public static String Language = null;
+    public static Boolean IsInitial = null, IsAvailUpdate = null, IsAutoFIleUpdate = null;
+    public static String Language = null, ver;
     public static String appdata = System.getenv("APPDATA");
-    public static String ver;
+    public static Integer totalProcessors = 0;
 
     static Boolean IsUseGui = null;
     static Boolean IsCheckUpdate = null;
@@ -67,7 +64,7 @@ public class Main {
         boolean isWindows = (os.indexOf("win") >= 0);
 
         if (!isWindows) {
-            System.out.println(ANSI_RED + "[ !!! ] ERROR!: ASFM only supports Windows, but your OS is not Windows.");
+            System.out.println(ANSI_RED + "[ !!! ] ERROR: ASFM only supports Windows, but your OS is not Windows.");
             Thread.sleep(5000);
             System.exit(1);
         }
@@ -75,13 +72,18 @@ public class Main {
         JSONParser parser = new JSONParser();
         String ver = TextManager.TxTOneLineRead(appdata + "/ASFM/ver.txt");
 
-        System.out.println("ASFM v" + ver + "\nCopyRight (C) 2023 Render. All right reserved. ( MIT License )\n");
+        System.out.println("ASFM v" + ver + "\nCopyRight (C) 2023 Render. ( MIT License )\n");
         System.out.println("[ OK ] Java ASFM runs successfully.");
         System.out.println("[ ING ] Load setting.json File...");
 
         ReloadSetting(); // 설정 불러오기
 
         System.out.println("[ OK ] Json was loaded successfully.");
+
+        System.out.println("[ ING ] Checking System specs...");
+
+        totalProcessors = Runtime.getRuntime().availableProcessors();
+
         if (IsCheckUpdate) {
             System.out.println("[ ING ] Checking Update...");
             IsAvailUpdate = UpdateManager.IsAvailableUpdate();
