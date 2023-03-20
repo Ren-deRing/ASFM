@@ -8,6 +8,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+// 코드가.. 좀 그럴 수 있으니 주의해주세요
+// 솔직히 자바 배운지 얼마 되지도 않았단 말이에요!
+// 그니깐.. 양해해줘요.. 히히
 
 public class Main {
     public static Boolean IsInitial = null, IsAvailUpdate = null, IsAutoFIleUpdate = null;

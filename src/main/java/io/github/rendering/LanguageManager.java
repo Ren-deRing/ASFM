@@ -6,7 +6,6 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageManager {
@@ -18,8 +17,8 @@ public class LanguageManager {
 
 
 
-    public static String UpdateAvail, Welcome, Initial1, Initial2, InitialEnd, LangNotExist, LangReloading,
-            MakeServer, SevSetting, PlSetting, ASFMSetting, WorlSetting, Exit, CorrectMenuInt,
+    public static String UpdateAvail, Welcome, Initial1, Initial2 ,Initial3, InitialEnd, LangNotExist, LangReloading,
+            MakeServer, SevSetting, PlSetting, ASFMSetting, WorldSetting, Exit, CorrectMenuInt,
             CorrectVer, CreateServer, SelectVersion, SelectMinerVer, InputMem, MemWarning;
     public static Boolean IsTextReset;
 
@@ -34,6 +33,7 @@ public class LanguageManager {
             Welcome = (String) uselang.get("Welcome");
             Initial1 = (String) uselang.get("Initial1");
             Initial2 = (String) uselang.get("Initial2");
+            Initial3 = (String) uselang.get("Initial3");
             InitialEnd = (String) uselang.get("InitialEnd");
             LangNotExist = (String) uselang.get("LangNotExist");
             LangReloading = (String) uselang.get("LangReloading");
@@ -44,7 +44,7 @@ public class LanguageManager {
             SevSetting = (String) Menu.get("PlSetting");
             PlSetting = (String) Menu.get("ASFMSetting");
             ASFMSetting = (String) Menu.get("ASFMSetting");
-            WorlSetting = (String) Menu.get("WorlSetting");
+            WorldSetting = (String) Menu.get("WorlSetting");
             Exit = (String) Menu.get("Exit");
             CorrectMenuInt = (String) Menu.get("CorrectMenuInt");
 

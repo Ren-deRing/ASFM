@@ -1,16 +1,14 @@
 package io.github.rendering;
 
-import io.github.rendering.server.CreateServer;
+import io.github.rendering.server.CreateServerMenu;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -19,6 +17,8 @@ public class ConsoleMenu {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
+
+    public static List<String> jarfiles = new ArrayList<String>();
 
     private static Integer Menu;
     private static Boolean NotIntMenu = false;
@@ -38,10 +38,9 @@ public class ConsoleMenu {
         String DATA_DIRECTORY = appdata + "/ASFM/Jars";
         File dir = new File(DATA_DIRECTORY);
 
-        List<String> jarfiles = new ArrayList<String>();
         String[] filenames = dir.list();
         for (String filename : filenames) {
-            boolean regex = Pattern.matches("^[a-z0-9]+\\.jar$", filename);
+            boolean regex = Pattern.matches("^[a-z0-9A-Z]+\\.jar$", filename);
             if (regex) {
                 jarfiles.add(filename);
             }
@@ -87,6 +86,8 @@ public class ConsoleMenu {
             Main.ReloadSetting(); // Main 클래스에서 설정 리로드
             LanguageManager.LoadTexts(Main.Language);
             System.out.println("\n" + LanguageManager.Initial2);
+            Thread.sleep(5000);
+            System.out.println("\n" + LanguageManager.Initial3);
             System.out.println(" - Deleting Cache...");
             System.out.println(" - Saving Files...");
             TextManager.writeToJson(appdata + "/ASFM/setting.json", "IsInitial", false);
@@ -106,7 +107,7 @@ public class ConsoleMenu {
             System.out.println("\n");
             System.out.println("         " + LanguageManager.MakeServer + "     " + LanguageManager.SevSetting);
             System.out.println("         " + LanguageManager.PlSetting + "      " + LanguageManager.ASFMSetting);
-            System.out.println("         " + LanguageManager.WorlSetting + "       " + LanguageManager.Exit);
+            System.out.println("         " + LanguageManager.WorldSetting + "       " + LanguageManager.Exit);
             System.out.println("\n\n");
             System.out.print("Menu > ");
             Scanner sc = new Scanner(System.in);
@@ -115,7 +116,7 @@ public class ConsoleMenu {
             try {
                 Menu = Integer.parseInt(MenuStr);
                 if (Menu == 1) {
-                    CreateServer.ServerCreateMenu();
+                    CreateServerMenu.ServerCreateMenu();
                     break;
                 } else if (Menu == 2) {
                     break;
