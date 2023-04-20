@@ -4,8 +4,8 @@
 Powerful automatic Minecraft server generator based on Java.
 ㅤ
 
-We decided to turn it into a team. This repository is no longer maintained, see https://github.com/Ren-deRing/MCSB for subsequent versions.
-ㅤ
+
+
 # ⚠ WARNING!
 ASFM is currently in beta and is not working yet.
 ㅤ
