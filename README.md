@@ -8,7 +8,7 @@ Powerful automatic Minecraft server generator based on Java.
 
 [ We decided to turn it into a team. ]
 
-[ This repository is no longer maintained, see https://github.com/ClosedDev/MCSB for subsequent versions. ]
+[ This repository is no longer maintained, https://github.com/ClosedDev/MCServerBuilder for subsequent versions. ]
 
 ⚠️⚠️
 
