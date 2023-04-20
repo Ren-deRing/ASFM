@@ -6,9 +6,9 @@ Powerful automatic Minecraft server generator based on Java.
 
 ⚠️⚠️
 
-[ We decided to turn it into a team. ]
+[ We decided to team up. This repository is no longer maintained. ]
 
-[ This repository is no longer maintained, see https://github.com/ClosedDev/MCServerBuilder for subsequent versions. ]
+[ See https://github.com/ClosedDev/MCServerBuilder for subsequent versions. ]
 
 ⚠️⚠️
 
@@ -29,3 +29,4 @@ To add a language, simply align the language json component exactly and
 
 put the language name you wrote down in the json file in setting.json.
 It is recommended to enter Unicode characters due to broken text.
+
